@@ -1,11 +1,12 @@
+import Canvas from './Canvas';
 import './GamePage.scss';
 
-const Game = () => {
+const GamePage = () => {
     return (
-        <>
-            <h1>cavas 시작해 볼까요~? Let's do it!</h1>
-            <canvas></canvas>
-        </>
+        <div className="canvas-container">
+            <Canvas />
+        </div>
     );
 };
-export default Game;
+
+export default GamePage;
