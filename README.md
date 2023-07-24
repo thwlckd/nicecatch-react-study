@@ -1,4 +1,4 @@
-# Elice SW5 - 2차 스터디
+# Elice SW5 - Nice Catch 😉
 
 -   프로젝트 구성
 
