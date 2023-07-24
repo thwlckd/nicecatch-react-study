@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* font-face */
+/* NotoSansKR */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src:url('../fonts/NotoSansKR-Regular.otf') format("opentype"),
+    url('../fonts/NotoSansKR-Regular.woff') format("woff")
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src:url('../fonts/NotoSansKR-Bold.otf') format("opentype"),
+    url('../fonts/NotoSansKR-Bold.woff') format("woff")
+}
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src:url('../fonts/NotoSansKR-Black.otf') format("opentype"),
+    url('../fonts/NotoSansKR-Black.woff') format("woff")
+}
+
+/* Reset */
+body *{box-sizing: border-box; outline: none;}
+body.fixed{overflow-y: hidden;}
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,menu,nav,section,article,aside,dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption{margin:0;padding:0;}
+body{-webkit-text-size-adjust:none;word-wrap:break-word;word-break:break-all;background:#fff;}
+body,input,select,textarea,button{border:none; font-size:14px; font-family: 'Noto Sans KR', sans-serif; color:#333333;}
+ul,ol,li{list-style:none;}
+table{border-spacing:0;}
+img,fieldset{border:0;}
+address,cite,code{font-style:normal;font-weight:normal;}
+em,i {font-style:normal;}
+label,img,input,select,textarea,button{vertical-align:middle;}
+.hide,legend{overflow: hidden; display:block; position:absolute; border: 0; width: 1px; height: 1px; clip: rect(1px, 1px, 1px, 1px);}
+hr{display:none;}
+main,header,section,nav,footer,aside,article,figure{display:block;}
+a{color:#333333;text-decoration:none;}
+button{cursor: pointer; color: #333333; background-color: transparent; outline: none; font-size: 16px;}
+caption{position: relative;}
+#wrap{min-width:1400px;}
+
+/* Form */
+input[type=password],
+input[type=tel],
+input[type=time],
+input[type=text],
+input[type=search],
+input[type=email],
+input[type=file],
+input[type=url],
+input[type=number],
+input[type=date],textarea{font-size:14px; color:#333333; border:1px solid #e0e0e0; background-color:#fff; transition: all 0.5s; box-sizing: border-box; vertical-align:middle; border-radius: 4px; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+pre{white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; white-space: pre-wrap; word-wrap: break-word; font-family: 'Noto Sans KR', sans-serif;}
+input[type=password]::-moz-reveal,
+input[type=password]::-ms-reveal{display: none; width: 0; height: 0;}
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=text] {padding: 0 16px; height: 40px; line-height: 40px; border-radius: 4px;}
+input::-webkit-input-placeholder{color:#c4c4c4; font-size:14px; line-height:100%;}
+input:focus,
+textarea:focus {border: 1px solid #A7A3FF !important;}
+textarea{padding: 10px 16px; border:1px solid #e1e1e1;}
+textarea::-webkit-input-placeholder{color:#c4c4c4;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{-webkit-appearance: none; margin: 0;}
+input[type=number]{-moz-appearance:textfield;}
+input[type=text]::-ms-clear{display: none;}
+select{-webkit-appearance:none; -moz-appearance:none; appearance:none;}
+select::-ms-expand{display:none;}
+
+input[type=number][readonly],
+input[type=tel][readonly],
+input[type=text][readonly],
+input[type=password][readonly],
+input[type=email][readonly],
+input[type=search][readonly]{-webkit-appearance:none; font-size:14px; padding: 0 16px; background: #f8f8f8; border: 1px solid #e0e0e0; color: #333333;}
+input[type=tel][disabled],
+input[type=text][disabled],
+input[type=password][disabled],
+input[type=search][disabled],
+input[type=email][disabled]{-webkit-appearance:none; font-size:14px; padding: 0 16px; background: #f8f8f8; border: 1px solid #e0e0e0; color: #c4c4c4;}
+select:disabled{color: #c4c4c4; background-color: #f8f8f8; border: 1px solid #e0e0e0; cursor: default;}
+textarea[readonly],
+textarea[disabled]{padding:12px;color:#e1e1e1; font-weight:normal; line-height:100%; height:40px; background:#f8f8f9;border:1px solid #e1e1e1;}
+.clear {clear:both;}
+.clear:after {content:""; display:block; clear:both;}
+.left{float: left;}
+.right{float: right;}
+
+/* 텍스트박스(공통사항)-자동완성 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+    -webkit-text-fill-color: #333 !important;
+}
+
+/* 스크롤 스타일 */
+.scroll{overflow: auto;}
+.scroll::-webkit-scrollbar{width: 4px; height: 4px;}
+.scroll::-webkit-scrollbar-thumb{background-color: #e0e0e0; border-radius: 100px;}
+.scroll::-webkit-scrollbar-track{background-color: #e5e5e5; border-radius: 100px; background-clip: padding-box; border: 3px solid transparent;}
+
+/* textarea 가로 고정 */
+textarea.re_ver{resize : vertical;}
+textarea.re_none{resize: none;}
+
+/* text 말줄임표 */
+.ellipsis{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* vertical-align */
+.ver_top{vertical-align: top;}
+.ver_mid{vertical-align: middle;}
+.ver_btm{vertical-align: bottom;}
+
+/* text-align */
+.txt_left{text-align: left;}
+.txt_center{text-align: center;}
+.txt_right{text-align: right;}
+
+/* display */
+.dis_block{display: block;}
+.dis_inblock{display: inline-block;}
+.dis_none{display: none;}
+
+/* 가로사이즈 */
+.w_64{width: 64px;}
+.w_100{width: 100px;}
+.w_120{width: 120px;}
+.w_156{width: 156px;}
+.w_200{width: 200px;}
+.w_276{width: 276px;}
+.w_400{width: 400px;}
+.w_full{width: 100%;}
+.w_minus210{width:calc(100% - 210px);}
+
+/* margin, padding */
+.marleft_4{margin-left: 4px;}
+.marleft_6{margin-left: 6px;}
+.marleft_10{margin-left: 10px;}
+.marleft_12{margin-left: 12px;}
+.marleft_40{margin-left: 40px;}
+
+.martop_4{margin-top: 4px;}
+.martop_8{margin-top: 8px;}
+.martop_10{margin-top: 10px;}
+.martop_20{margin-top: 20px;}
+.martop_24{margin-top: 24px;}
+.martop_40{margin-top: 40px;}
+
+/* 폰트컬러 */
+.col_blue{color:#4D47C3;}
+.col_grey{color:#666666;}
+
+/* background-color */
+.bg_grey{background-color: #f8f8f9;}
+
+/* 폰트 사이즈 */
+.fs_12{font-size: 12px;}
+.fs_14{font-size: 14px;}
+.fs_16{font-size: 16px;}
+.fs_18{font-size: 18px;}
+.fs_20{font-size: 20px;}
+
+/* font weight */
+.fw_normal{font-weight: 400;}
+.fw_bold{font-weight: 700;}
+.fw_ebold{font-weight: 900;}
+
+/* button */
