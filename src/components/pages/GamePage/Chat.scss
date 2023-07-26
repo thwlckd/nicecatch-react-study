@@ -1,0 +1,23 @@
+@use 'Canvas';
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.message-container {
+  width: Canvas.$canvas-width * 0.5;
+  height: Canvas.$canvas-height * 0.6;
+  background-color: white;
+}
+
+#you {
+  background-color: lightblue;
+  text-align: end;
+}
+
+#other {
+  background-color: lightskyblue;
+  text-align: start;
+}
