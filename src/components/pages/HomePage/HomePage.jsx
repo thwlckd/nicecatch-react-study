@@ -1,16 +1,30 @@
-import { Link, useNavigate } from 'react-router-dom';
-const Home = () => {
-    const navigate = useNavigate();
+import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
-    const handleClick = () => {
-        navigate('/game');
-    };
-    return (
-        <>
-            <h1>Hello! Nice Catch :-)</h1>
-            {/* <Link to="/game">canvas</Link> */}
-            <p onClick={handleClick}>canvas 작업 페이지 클릭!</p>
-        </>
-    );
+const Home = () => {
+  const usernameRef = useRef();
+  const roomRef = useRef();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (usernameRef.current.value !== '' && roomRef.current.value !== '') {
+      navigate('/game', {
+        state: {
+          username: usernameRef.current.value,
+          room: roomRef.current.value,
+        },
+      });
+    }
+  };
+
+  return (
+    <>
+      <h1>Hello! Nice Catch :-)</h1>
+      <h3>Join A Game</h3>
+      <input type="text" placeholder="Name" ref={usernameRef} />
+      <input type="text" placeholder="Room ID" ref={roomRef} />
+      <button onClick={handleClick}>Join A Game</button>
+    </>
+  );
 };
 export default Home;
