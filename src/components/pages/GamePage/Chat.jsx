@@ -29,35 +29,50 @@ const Chat = ({ socket, username, room }) => {
     }
   };
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   sendMessage();
+  // };
+
   return (
-    <div className="chat-container">
-      <h3>Nice Chat</h3>
-      <ScrollToBottom className="message-container">
-        {messageList.map((messageData) => {
-          return (
-            <div
-              // key={Date.now()}
-              id={username === messageData.author ? 'you' : 'other'}
-            >
-              <span className="message-content">{messageData.message}</span>
-              <div className="message-meta">
-                <span>{messageData.time}</span>
-                <span>{messageData.author}</span>
+    <>
+      <div className="chat-container">
+        <h3>Nice Chat</h3>
+        <ScrollToBottom className="message-container">
+          {messageList.map((messageData) => {
+            return (
+              <div
+                // key={Date.now()}
+                id={username === messageData.author ? 'you' : 'other'}
+              >
+                <span
+                  className="message-content"
+                  id={username === messageData.author ? 'you' : 'other'}
+                >
+                  {messageData.message}
+                </span>
+                <div className="message-meta">
+                  <span>{`${messageData.author} ${messageData.time}`}</span>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </ScrollToBottom>
-      <input
-        type="text"
-        value={message}
-        onChange={(event) => setMessage(event.target.value)}
-        onKeyDown={(event) => {
-          event.key === 'Enter' && sendMessage();
-        }}
-      />
-      <button onClick={sendMessage}>&#9658;</button>
-    </div>
+            );
+          })}
+        </ScrollToBottom>
+        <div className="chat-contoller">
+          <input
+            type="text"
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            // onSubmit={handleSubmit}
+            onKeyDown={(event) => {
+              event.key === 'Enter' && sendMessage();
+            }}
+          />
+          <button onClick={sendMessage}>&#9658;</button>
+        </div>
+      </div>
+    </>
   );
 };
 

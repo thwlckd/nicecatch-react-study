@@ -16,9 +16,13 @@ const GamePage = () => {
   console.log(`username: ${username} / room: ${room}`);
 
   return (
-    <div className="canvas-container">
-      <Canvas />
-      <Chat socket={socket} username={username} room={room} />
+    <div className="gamepage-container">
+      <div className="canvas-component">
+        <Canvas />
+      </div>
+      <div className="chat-component">
+        <Chat socket={socket} username={username} room={room} />
+      </div>
     </div>
   );
 };

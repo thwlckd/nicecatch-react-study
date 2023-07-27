@@ -52,15 +52,15 @@ const Controller = ({ ctx, canvasRef }) => {
     colorRef.current.value = canvasColor;
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    const url = URL.createObjectURL(file);
-    const image = new Image();
-    image.src = url;
-    image.onload = () => {
-      ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    };
-  };
+  // const handleFileChange = (event) => {
+  //   const file = event.target.files[0];
+  //   const url = URL.createObjectURL(file);
+  //   const image = new Image();
+  //   image.src = url;
+  //   image.onload = () => {
+  //     ctx.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  //   };
+  // };
 
   return (
     <div className="controller-container">
@@ -77,7 +77,7 @@ const Controller = ({ ctx, canvasRef }) => {
         <button onClick={handleButtonMode}>{isFilling ? '배경' : '펜'}</button>
         <button onClick={handleButtonClear}>초기화</button>
         <button onClick={handleButtonErase}>지우개</button>
-        <label htmlFor="file" id="file">
+        {/* <label htmlFor="file" id="file">
           이미지 선택
           <input
             id="file"
@@ -86,7 +86,7 @@ const Controller = ({ ctx, canvasRef }) => {
             ref={fileRef}
             onChange={handleFileChange}
           />
-        </label>
+        </label> */}
         {canvasRef.current && (
           <a href={canvasRef.current.toDataURL()} download="myDrawing.jpg">
             <button>이미지 저장</button>
