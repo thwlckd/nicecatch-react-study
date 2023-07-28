@@ -39,10 +39,10 @@ const Chat = ({ socket, username, room }) => {
       <div className="chat-container">
         <h3>Nice Chat</h3>
         <ScrollToBottom className="message-container">
-          {messageList.map((messageData) => {
+          {messageList.map((messageData, index) => {
             return (
               <div
-                // key={Date.now().toString()}
+                key={index}
                 id={username === messageData.author ? 'you' : 'other'}
               >
                 <span
