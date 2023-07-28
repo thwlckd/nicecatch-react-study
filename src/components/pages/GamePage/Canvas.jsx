@@ -32,7 +32,7 @@ const Canvas = () => {
       ctx.stroke();
       return;
     }
-    ctx.moveTo(x, y);
+    ctx && ctx.moveTo(x, y);
   };
 
   const handleMouseDown = () => {
