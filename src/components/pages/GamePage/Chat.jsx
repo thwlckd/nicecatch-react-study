@@ -29,11 +29,10 @@ const Chat = ({ socket, username, room }) => {
     }
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   event.stopPropagation();
-  //   sendMessage();
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendMessage();
+  };
 
   return (
     <>
@@ -43,7 +42,7 @@ const Chat = ({ socket, username, room }) => {
           {messageList.map((messageData) => {
             return (
               <div
-                // key={Date.now()}
+                // key={Date.now().toString()}
                 id={username === messageData.author ? 'you' : 'other'}
               >
                 <span
@@ -60,16 +59,14 @@ const Chat = ({ socket, username, room }) => {
           })}
         </ScrollToBottom>
         <div className="chat-contoller">
-          <input
-            type="text"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            // onSubmit={handleSubmit}
-            onKeyDown={(event) => {
-              event.key === 'Enter' && sendMessage();
-            }}
-          />
-          <button onClick={sendMessage}>&#9658;</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+            />
+            <button>&#9658;</button>
+          </form>
         </div>
       </div>
     </>
